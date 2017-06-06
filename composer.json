@@ -1,7 +1,7 @@
 {
     "name": "faustbrian/wordpress-xml-rpc-php-client",
-    "description": "A WordPressXmlRpc Client for PHP",
-    "keywords": ["api", "faustbrian", "faustbrian-wordpress-xml-rpc", "wordpress-xml-rpc", "Brian Faust", "faustbrian"],
+    "description": "A WordPress XML-RPC Client for PHP",
+    "keywords": ["api", "wordpress xml-rpc", "Brian Faust", "faustbrian"],
     "license": "MIT",
     "authors": [{
         "name": "Brian Faust",
