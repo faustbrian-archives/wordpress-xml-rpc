@@ -11,8 +11,8 @@
 
 namespace BrianFaust\WordPressXmlRpc\API\Legacy;
 
-use BrianFaust\WordPressXmlRpc\API\AbstractAPI;
 use BrianFaust\Http\HttpResponse;
+use BrianFaust\WordPressXmlRpc\API\AbstractAPI;
 
 class Blogger extends AbstractAPI
 {
