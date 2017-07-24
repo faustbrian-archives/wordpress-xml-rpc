@@ -17,21 +17,21 @@ class Categories extends AbstractAPI
 {
     public function getCategories($blog_id): HttpResponse
     {
-        return $this->client->post('wp.getCategories', compact('blog_id'));
+        return $this->post('wp.getCategories', compact('blog_id'));
     }
 
     public function suggestCategories($blog_id, $category, $max_results): HttpResponse
     {
-        return $this->client->post('wp.suggestCategories', compact('blog_id', 'category', 'max_results'));
+        return $this->post('wp.suggestCategories', compact('blog_id', 'category', 'max_results'));
     }
 
     public function newCategory($blog_id, $category): HttpResponse
     {
-        return $this->client->post('wp.newCategory', compact('blog_id', 'category'));
+        return $this->post('wp.newCategory', compact('blog_id', 'category'));
     }
 
     public function deleteCategory($blog_id, $category_id): HttpResponse
     {
-        return $this->client->post('wp.deleteCategory', compact('blog_id', 'category_id'));
+        return $this->post('wp.deleteCategory', compact('blog_id', 'category_id'));
     }
 }

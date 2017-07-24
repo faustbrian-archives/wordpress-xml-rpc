@@ -17,6 +17,6 @@ class Tags extends AbstractAPI
 {
     public function getTags($blog_id): HttpResponse
     {
-        return $this->client->post('wp.getTags', compact('blog_id'));
+        return $this->post('wp.getTags', compact('blog_id'));
     }
 }

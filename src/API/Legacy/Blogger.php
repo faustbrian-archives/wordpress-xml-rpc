@@ -18,36 +18,36 @@ class Blogger extends AbstractAPI
 {
     public function getUsersBlogs(): HttpResponse
     {
-        return $this->client->post('blogger.getUsersBlogs');
+        return $this->post('blogger.getUsersBlogs');
     }
 
     public function getUserInfo(): HttpResponse
     {
-        return $this->client->post('blogger.getUserInfo');
+        return $this->post('blogger.getUserInfo');
     }
 
     public function getPost($postid): HttpResponse
     {
-        return $this->client->post('blogger.getPost', compact('postid'));
+        return $this->post('blogger.getPost', compact('postid'));
     }
 
     public function getRecentPosts($blogId, $numberOfPosts = 10): HttpResponse
     {
-        return $this->client->post('blogger.getRecentPosts', compact('blogId', 'numberOfPosts'));
+        return $this->post('blogger.getRecentPosts', compact('blogId', 'numberOfPosts'));
     }
 
     public function newPost($blogid, $content, $publish): HttpResponse
     {
-        return $this->client->post('blogger.newPost', compact('blogid', 'content', 'publish'));
+        return $this->post('blogger.newPost', compact('blogid', 'content', 'publish'));
     }
 
     public function editPost($postid, $content, $publish): HttpResponse
     {
-        return $this->client->post('blogger.editPost', compact('postid', 'content', 'publish'));
+        return $this->post('blogger.editPost', compact('postid', 'content', 'publish'));
     }
 
     public function deletePost($postid): HttpResponse
     {
-        return $this->client->post('blogger.deletePost', compact('postid'));
+        return $this->post('blogger.deletePost', compact('postid'));
     }
 }

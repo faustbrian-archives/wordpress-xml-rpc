@@ -17,11 +17,11 @@ class Pingback extends AbstractAPI
 {
     public function ping($sourceUri, $targetUri): HttpResponse
     {
-        return $this->client->post('pingback.ping', compact('sourceUri', 'targetUri'));
+        return $this->post('pingback.ping', compact('sourceUri', 'targetUri'));
     }
 
     public function getPingbacks($url): HttpResponse
     {
-        return $this->client->post('pingback.extensions.getPingbacks', compact('url'));
+        return $this->post('pingback.extensions.getPingbacks', compact('url'));
     }
 }

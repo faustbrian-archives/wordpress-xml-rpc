@@ -11,15 +11,17 @@
 
 namespace BrianFaust\WordPressXmlRpc\API;
 
+use BrianFaust\Http\HttpResponse;
+
 class Options extends AbstractAPI
 {
     public function getOptions($blog_id, $options = []): HttpResponse
     {
-        return $this->client->post('wp.getOptions', compact('blog_id', 'options'));
+        return $this->post('wp.getOptions', compact('blog_id', 'options'));
     }
 
     public function setOptions($blog_id, $options): HttpResponse
     {
-        return $this->client->post('wp.setOptions', compact('blog_id', 'options'));
+        return $this->post('wp.setOptions', compact('blog_id', 'options'));
     }
 }

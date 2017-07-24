@@ -17,16 +17,16 @@ class System extends AbstractAPI
 {
     public function multicall(): HttpResponse
     {
-        return $this->client->post('system.multicall');
+        return $this->post('system.multicall');
     }
 
     public function listMethods(): HttpResponse
     {
-        return $this->client->post('system.listMethods');
+        return $this->post('system.listMethods');
     }
 
     public function getCapabilities(): HttpResponse
     {
-        return $this->client->post('system.getCapabilities');
+        return $this->post('system.getCapabilities');
     }
 }

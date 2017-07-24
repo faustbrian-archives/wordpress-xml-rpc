@@ -21,13 +21,27 @@ class Client
     private $url;
 
     /**
+     * @var string
+     */
+    public $username;
+
+    /**
+     * @var string
+     */
+    public $password;
+
+    /**
      * Create a new client instance.
      *
      * @param string $url
+     * @param string $username
+     * @param string $password
      */
-    public function __construct(string $url)
+    public function __construct(string $url, string $username, string $password)
     {
         $this->url = $url;
+        $this->username = $username;
+        $this->password = $password;
     }
 
     /**
@@ -39,10 +53,12 @@ class Client
      */
     public function api(string $name): API\AbstractAPI
     {
-        $client = Http::withBaseUri($this->url);
-
         $class = "BrianFaust\\WordPressXmlRpc\\API\\{$name}";
 
-        return new $class($client);
+        return new $class(Http::new(), [
+            'url' => $this->url,
+            'username' => $this->username,
+            'password' => $this->password,
+        ]);
     }
 }

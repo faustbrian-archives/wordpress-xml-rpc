@@ -18,41 +18,41 @@ class MetaWeblog extends AbstractAPI
 {
     public function getPost($postid): HttpResponse
     {
-        return $this->client->post('metaWeblog.getPost', compact('postid'));
+        return $this->post('metaWeblog.getPost', compact('postid'));
     }
 
     public function getRecentPosts($blogid, $numberOfPosts): HttpResponse
     {
-        return $this->client->post('metaWeblog.getRecentPosts', compact('blogid', 'numberOfPosts'));
+        return $this->post('metaWeblog.getRecentPosts', compact('blogid', 'numberOfPosts'));
     }
 
     public function newPost($blogid, $content, $enclosure, $publish): HttpResponse
     {
-        return $this->client->post('metaWeblog.newPost', compact('blogid', 'content', 'enclosure', 'publish'));
+        return $this->post('metaWeblog.newPost', compact('blogid', 'content', 'enclosure', 'publish'));
     }
 
     public function editPost($postid, $content, $publish): HttpResponse
     {
-        return $this->client->post('metaWeblog.editPost', compact('postid', 'content', 'publish'));
+        return $this->post('metaWeblog.editPost', compact('postid', 'content', 'publish'));
     }
 
     public function deletePost($postid): HttpResponse
     {
-        return $this->client->post('metaWeblog.deletePost', compact('postid'));
+        return $this->post('metaWeblog.deletePost', compact('postid'));
     }
 
     public function getCategories($blogid): HttpResponse
     {
-        return $this->client->post('metaWeblog.getCategories', compact('blogid'));
+        return $this->post('metaWeblog.getCategories', compact('blogid'));
     }
 
     public function newMediaObject($blogid, $data): HttpResponse
     {
-        return $this->client->post('metaWeblog.newMediaObject', compact('blogid', 'data'));
+        return $this->post('metaWeblog.newMediaObject', compact('blogid', 'data'));
     }
 
     public function getUsersBlogs($postid): HttpResponse
     {
-        return $this->client->post('metaWeblog.getUsersBlogs');
+        return $this->post('metaWeblog.getUsersBlogs');
     }
 }

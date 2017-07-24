@@ -17,31 +17,31 @@ class User extends AbstractAPI
 {
     public function getUsersBlogs(): HttpResponse
     {
-        return $this->client->post('wp.getUsersBlogs');
+        return $this->post('wp.getUsersBlogs');
     }
 
     public function getUser($blog_id, $user_id, $fields = []): HttpResponse
     {
-        return $this->client->post('wp.getUser', compact('blog_id', 'user_id', 'fields'));
+        return $this->post('wp.getUser', compact('blog_id', 'user_id', 'fields'));
     }
 
     public function getUsers($blog_id, $filter = []): HttpResponse
     {
-        return $this->client->post('wp.getUsers', compact('blog_id', 'filter'));
+        return $this->post('wp.getUsers', compact('blog_id', 'filter'));
     }
 
     public function getProfile($blog_id, $filter = []): HttpResponse
     {
-        return $this->client->post('wp.getProfile', compact('blog_id', 'filter'));
+        return $this->post('wp.getProfile', compact('blog_id', 'filter'));
     }
 
     public function editProfile($blog_id, $content): HttpResponse
     {
-        return $this->client->post('wp.editProfile', compact('blog_id', 'content'));
+        return $this->post('wp.editProfile', compact('blog_id', 'content'));
     }
 
     public function getAuthors($blog_id): HttpResponse
     {
-        return $this->client->post('wp.getAuthors', compact('blog_id'));
+        return $this->post('wp.getAuthors', compact('blog_id'));
     }
 }

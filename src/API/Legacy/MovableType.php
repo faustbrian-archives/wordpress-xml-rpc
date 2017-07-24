@@ -18,41 +18,41 @@ class MovableType extends AbstractAPI
 {
     public function publishPost($postid): HttpResponse
     {
-        return $this->client->post('mt.publishPost', compact('postid'));
+        return $this->post('mt.publishPost', compact('postid'));
     }
 
     public function getRecentPostTitles(): HttpResponse
     {
-        return $this->client->post('mt.getRecentPostTitles');
+        return $this->post('mt.getRecentPostTitles');
     }
 
     public function getCategoryList($numberOfPosts = 10): HttpResponse
     {
-        return $this->client->post('mt.getCategoryList', compact('numberOfPosts'));
+        return $this->post('mt.getCategoryList', compact('numberOfPosts'));
     }
 
     public function getPostCategories($postid): HttpResponse
     {
-        return $this->client->post('mt.getPostCategories', compact('postid'));
+        return $this->post('mt.getPostCategories', compact('postid'));
     }
 
     public function setPostCategories($postid, $categories): HttpResponse
     {
-        return $this->client->post('mt.setPostCategories', compact('postid', 'categories'));
+        return $this->post('mt.setPostCategories', compact('postid', 'categories'));
     }
 
     public function getTrackbackPings(): HttpResponse
     {
-        return $this->client->post('mt.getTrackbackPings');
+        return $this->post('mt.getTrackbackPings');
     }
 
     public function supportedMethods(): HttpResponse
     {
-        return $this->client->post('mt.supportedMethods');
+        return $this->post('mt.supportedMethods');
     }
 
     public function supportedTextFilters(): HttpResponse
     {
-        return $this->client->post('mt.supportedTextFilters');
+        return $this->post('mt.supportedTextFilters');
     }
 }

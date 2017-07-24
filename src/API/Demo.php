@@ -17,11 +17,11 @@ class Demo extends AbstractAPI
 {
     public function sayHello(): HttpResponse
     {
-        return $this->client->post('demo.sayHello');
+        return $this->post('demo.sayHello');
     }
 
     public function addTwoNumbers($numberOne, $numberTwo): HttpResponse
     {
-        return $this->client->post('demo.addTwoNumbers', [$numberOne, $numberTwo]);
+        return $this->post('demo.addTwoNumbers', [$numberOne, $numberTwo]);
     }
 }
