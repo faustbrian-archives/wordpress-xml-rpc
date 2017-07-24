@@ -38,7 +38,7 @@ abstract class AbstractAPI
 
     protected function post(string $method, array $parameters = []): HttpResponse
     {
-        return $this->client->post($this->config['url'], xmlrpc_encode_request($method, $parameters + [
+        return $this->client->asBody()->post($this->config['url'], xmlrpc_encode_request($method, $parameters + [
             $this->config['username'], $this->config['password'],
         ]));
     }
