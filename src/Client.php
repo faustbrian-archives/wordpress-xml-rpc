@@ -58,7 +58,7 @@ class Client
         $class = "BrianFaust\\WordPressXmlRpc\\API\\{$name}";
 
         return new $class(Http::new(), [
-            'url' => $this->url,
+            'url'      => $this->url,
             'username' => $this->username,
             'password' => $this->password,
         ]);
