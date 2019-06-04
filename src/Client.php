@@ -5,15 +5,15 @@ declare(strict_types=1);
 /*
  * This file is part of WordPress XML-RPC PHP Client.
  *
- * (c) Brian Faust <hello@brianfaust.me>
+ * (c) Brian Faust <hello@basecode.sh>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace BrianFaust\WordPressXmlRpc;
+namespace Plients\WordPressXmlRpc;
 
-use BrianFaust\Http\Http;
+use Plients\Http\Http;
 
 class Client
 {
@@ -51,11 +51,11 @@ class Client
      *
      * @param string $name
      *
-     * @return \BrianFaust\WordPressXmlRpc\API\AbstractAPI
+     * @return \Plients\WordPressXmlRpc\API\AbstractAPI
      */
     public function api(string $name): API\AbstractAPI
     {
-        $class = "BrianFaust\\WordPressXmlRpc\\API\\{$name}";
+        $class = "Plients\\WordPressXmlRpc\\API\\{$name}";
 
         return new $class(Http::new(), [
             'url'      => $this->url,
